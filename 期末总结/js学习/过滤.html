@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function ()
+        {
+        var oTxt1=document.getElementById('txt1');
+        var oTxt2=document.getElementById('txt2');
+        var oTxt3=document.getElementById('txt3');
+        var oBtn=document.getElementById('btn1');
+        var oBtn2=document.getElementById('btn2');
+        oBtn.onclick=function () {
+            var re = /北京|百度|淘宝/g;
+            oTxt2.value = oTxt1.value.replace(re, '****');
+        };
+
+        oBtn2.onclick=function ()
+        {
+            var re=/ ^ \w + @ [a-z0-9] + \. [a-z] + $ /i;
+
+            if(re.test(oTxt3.value))
+            {
+                alert('合法邮箱');
+            }else
+            {
+                alert('不合法邮箱');
+            }
+        }
+
+        };
+        </script>
+</head>
+<body>
+<textarea id="txt1" rows="10" cols="40"></textarea>
+<input id="btn1" type="button" value="过滤">
+<textarea id="txt2" rows="10" cols="40"></textarea>
+<br>
+<input type="text" id="txt3">
+<input type="button" value="校验" id="btn2">
+</body>
+</html>

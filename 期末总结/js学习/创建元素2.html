@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function ()
+        {
+            var oBtn=document.getElementById('btn1');
+            var oUl=document.getElementById('ul1');
+            var oTxt=document.getElementById('txt1');
+
+            oBtn.onclick=function()
+            {
+                var oLi=document.createElement('li');//createElement创建新元素
+               var aLi=oUl.getElementsByTagName('li');//创建元素组
+                oLi.innerHTML=oTxt.value;//innerHTML输入文本
+              //  oUl.appendChild(oLi);//创建元素位置
+
+                if(aLi.length>0) {
+                    oUl.insertBefore(oLi, aLi[0]);//isertBefore（元素, 插入位置）
+                }
+                else
+                {
+                    oUl.appendChild(oLi);
+                }
+                };
+        };
+
+
+    </script>
+
+
+</head>
+<body>
+<input id="txt1" type="text">
+<input id="btn1" type="button" value="创建li">
+<ul id="ul1">
+
+</ul>
+</body>
+</html>

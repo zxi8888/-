@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function ()
+        {
+            var aA=document.getElementsByTagName('a');
+            var oUl=document.getElementById('ul1');
+
+            for(var i=0;i<aA.length;i++)
+            {
+                aA[i].onclick=function ()
+                {
+                   oUl.removeChild(this.parentNode);//removeChild删除节点
+                };
+            }
+
+
+        };
+
+        </script>
+
+</head>
+<body>
+<ul id="ul1">
+    <li>sadasdas<a href="javascript:;">删除</a></li>
+    <li>wqeq<a href="javascript:;">删除</a></li>
+    <li>wqewqewqe<a href="javascript:;">删除</a></li>
+    <li>21313<a href="javascript:;">删除</a></li>
+
+</ul>
+
+</body>
+</html>

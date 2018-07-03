@@ -1,0 +1,216 @@
+var aa = document.getElementById('aa');
+var bb = document.getElementById('bb');
+//排序
+b.onclick=function ()
+{
+var arr=[];
+
+for(var i=0;i<aa.tBodies[0].rows.length;i++)
+{
+arr[i]=aa.tBodies[0].rows[i];
+}
+arr.sort(function (tr1,tr2)) {
+var n1=parseInt(tr1.cells[0].innerHTML)
+var n2=parseInt(tr2.cells[0].innerHTML)
+return n1-n2;
+}
+for(var i=0;i<arr.length;i++)
+{
+aa.tBodies[0].appendChild(arr[i]);
+}
+}
+
+//匀速运动
+funtion starMove()
+{
+var oDiv=document.getElementById('div1');
+setInterval(function ()){
+var speed=(300-oDiv.offsetLeft)/10;
+speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+oDiv.style.left=oDiv.offsetLeft+speed='px';
+
+document.title=oDiv.offsetLeft+','+speed;
+}, 30};
+}
+
+//悬浮窗口
+window.onscroll=function ()
+{
+var oDiv=document.getElementById('div1');
+var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+};
+var timer=null;
+
+function startMove(iTarget)
+{
+var oDiv=document.getElementById('div1');
+
+clearInterval(timer);
+timer=setInterval(function (){
+var speed=(iTarget-oDiv.offsetTop)/4;
+speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+if(oDiv.offsetTop==iTarget)
+{
+clearInterval(timer);
+}
+else
+{
+document.getElementById('txt1').value=oDiv.offsetTop;
+oDiv.style.top=oDiv.offsetTop+speed+'px';
+}
+}, 30);
+}
+
+//匀速运动停止
+function startMove(iTarget)
+{
+var timer=null;
+var oDiv=document.getElementById('div1');
+clearInterval(timer);
+timer=setInterval(function (){
+var speed=0;
+
+if(oDiv.offsetLeft<iTarget)
+{
+speed=7;
+}
+else
+{
+speed=-7;
+}
+if(Math.abs(iTarget-oDiv.offsetLeft)<=7)
+{
+clearInterval(timer);
+oDiv.style.left=iTarget+'px';
+}
+else
+{
+oDiv.style.left=oDiv.offsetLeft+speed+'px';
+}
+}, 30);
+}
+
+
+
+//多物体定时器
+window.onload=function ()
+{
+var aDiv=document.getElementsByTagName('div');
+
+for(var i=0;i<aDiv.length;i++)
+{
+aDiv[i].timer=null;
+
+aDiv[i].onmouseover=function()
+{
+startMove(this, 400);
+};
+aDiv[i].onmouseout=function ()
+{
+startMove(this, 100);
+};
+}
+};
+
+function startMove(obj, iTarget)
+{
+clearInterval(obj.timer);
+obj.timer=setInterval(function (){
+var speed=(iTarget-obj.offsetWidth)/6;
+speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+if(obj.offsetWidth==iTarget)
+{
+clearInterval(obj.timer);
+}
+else
+{
+obj.style.width=obj.offsetWidth+speed+'px';
+}
+}, 30);
+}
+}
+
+
+
+//多物体淡入淡出
+
+window.onload=function ()
+{
+var aDiv=document.getElementsByTagName('div');
+
+for(var i=0;i<aDiv.length;i++)
+{
+aDiv[i].alpha=30;
+aDiv[i].onmouseover=function ()
+{
+startMove(this, 100);
+};
+aDiv[i].onmouseout=function ()
+{
+startMove(this, 30);
+};
+}
+};
+
+function startMove(obj,iTarget)
+{
+clearInterval(obj.timer);
+obj.timer=setInterval(function ()){
+var speed=(iTarget-obj.alpha)/6;
+speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+if(obj.alpha==iTarget)
+{
+clearInterval(obj.timer);
+}
+else
+{
+obj.alpha+=speed;
+
+obj.style.filter='alpha(opacity:'+obj.alpha+')';
+obj.style.opacity=obj.alpha/100;
+}
+}, 30};
+}
+
+
+//offset的bug
+function getStyle(obj, name)
+{
+if(obj.currentStyle)
+{
+return obj.currentStyle[name];
+}
+else
+{
+return getComputedStyle(obj, false)[name];
+}
+}
+setInterval(function (){
+var oDiv=document.getElementById('div1');
+
+oDiv.style.width=parseInt(getStyle(oDiv, 'width'))-1+'px';
+}, 30);
+
+oEvent.cancelBubble=true;//取消冒泡
+
+
+var oEvent=ev||event;//事件兼容处理
+
+return false //阻止默认事件
+
+attachEvent(事件, 函数) 绑定事件
+detachEvent(事件, 函数) 解除绑定
+
+addEventListtener(事件， 函数, 捕获)
+removeEventListener(事件， 函数, 捕获)
+
+
+
+
+
+
+

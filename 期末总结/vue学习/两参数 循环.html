@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(value, key) in object">    <!--<li v-for="(value, key, index) in object"> 带三个参数 -->
+        {{ key }} : {{ value }}     <!--  {{ index }} : {{ key }} : {{value}}-->
+        </li>
+    </ul>
+</div>
+
+<!--<div id="app">
+    <ul>
+        <li v-for="n in 10">
+            {{ n }}
+        </li>
+    </ul>
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app'
+    })
+    </script>
+    迭代整数
+    -->
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            object: {
+                name: '12222',
+                url: '2333',
+                slogan: '3444'
+            }
+        }
+    })
+    </script>
+</body>
+</html>

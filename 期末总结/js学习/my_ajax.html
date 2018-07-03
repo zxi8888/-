@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+
+        function ajax(url, fnSucc, fnFaild)
+        {
+            //1.创建Ajax对象
+            if(window.XMLHttpRequest)//为变量报错 为属性未定义
+            {
+                var oAjax=new XMLHttpRequest();
+            }
+            else
+            {
+                var oAjax=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            //2.连接服务器
+            //open(方法， 文件名， 异步传输)
+            oAjax.open('GET', 'url?t='+new Date().getTime(), true);//+new Date().getTime()保持更新 防止缓存
+
+            //3.发送请求
+            oAjax.send();
+
+            //4.接收请求
+
+            oAjax.onreadystatechange=function ()
+            {
+                //oAjax.readyState  //浏览器和服务器，进行到哪一步了
+                if(oAjax.readyState==4)
+                {
+                    if(oAjax.readyState==200)//成功
+                    {
+                        fnSucc(oAjax.responseText);
+                    }
+                    else
+                    {
+                       if(fnFaild)
+                       {
+                           fnFaild(oAjax.status);
+                       }
+                    }
+                }
+            };
+
+        }
+
+
+        window.onload=function ()
+        {
+            var oBtn=document.getElementById('btn1');
+
+            oBtn.onclick=function ()
+            {
+
+
+            };
+
+        };
+        </script>
+</head>
+<body>
+<input id="btn1" type="button" value="读取">
+</body>
+</html>

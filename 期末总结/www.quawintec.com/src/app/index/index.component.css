@@ -1,0 +1,29 @@
+.vertical-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.feature_teaser {
+  text-align: center;
+  border-right: solid 1px #cccccc;
+  overflow: hidden;
+  padding: 30px;
+}
+.carousel-caption h1 {
+  display: inline-block;
+  margin: 0 0 0px 0;
+  padding: 16px 30px;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.2);
+  line-height: 1em;
+  color: #efefef;
+  font-size: 45px;
+  font-weight: 300;
+  width: 100%;
+  border: solid 0px #ffffff;
+}
+ .carousel-caption .lead.skincolored {
+  background-color: #428bca;
+  background-color: rgba(66, 139, 202, 0.7);
+}

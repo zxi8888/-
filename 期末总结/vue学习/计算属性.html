@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>原始字符串: {{ message }}</p>
+    <p>计算后反转字符串：{{ reversedMessage }}</p>
+    <p>使用方法后反转字符串：{{ reversedMessage2() }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Runoob!'
+        },
+        computed: {
+            //计算属性的getter
+            reversedMessage: function() {
+                //`this`指向vm实例
+                return this.message.split('').reverse().join('')
+            }
+        },
+        //computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。
+        methods: {
+            reversedMessage2: function() {
+                return this.message.split('').reverse().join('')
+            }
+        }//而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
+
+    })
+    </script>
+<!--
+
+//computed setter
+<div id="app">
+    <p>{{ site }}</p>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'Google',
+            url: 'http://www.google.com'
+        },
+        computed: {
+            site: {
+                //getter
+                get: function() {
+                    return this.name +''+ this.url
+                },
+                //setter
+                set: function(newValue) {
+                    var names = newValue.split('')
+                    this.name = names[0]
+                    this.url = name[names.length - 1]
+                }
+            }
+        }
+    })
+    //调用 setter, vm.name 和 vm.url 也会被对应更新
+    vm.site = '213213 21321313';
+    document.write('name:' + vm.name);
+    document.write('<br>');
+    document.write('url:' + vm.url);
+    </script>
+-->
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<!--<div id="app">
+    <button v-on:click="counter += 1">增加 1</button>&lt;!&ndash;事件监听可以使用 v-on 指令：&ndash;&gt;
+    <p>这个按钮被点击了{{ counter }} 次 </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0
+        }
+    })
+    </script>-->
+
+<!--<div id="app">
+    &lt;!&ndash;`greet`是在下面定义的方法名&ndash;&gt;
+    <button v-on:click="greet">Greet</button>&lt;!&ndash;v-on 可以接收一个定义的方法来调用。&ndash;&gt;
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name: 'Vue.js'
+        },
+        //在`methods`对象中定义方法
+        methods: {
+            greet: function(event) {
+                //`this`在方法里指定当前Vue实例
+                alert('Hello ' + this.name + '!')
+                //`event`是原生DOM事件
+                if(event) {
+                    alert(event.target.tagName)
+                }
+            }
+        }
+    })
+    //也可以用JavaScript直接调用方法
+    app.greet() //-> 'Hello Vue.js!'
+    </script>-->
+
+<!--<div id="app">
+    <button v-on:click="say('hi')">Say hi</button>
+    <button v-on:click="say('what')">Say what</button>//除了直接绑定到一个方法，也可以用内联 JavaScript 语句：
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            say: function (message) {
+                alert(message)
+            }
+        }
+
+    })
+    </script>-->
+<!--Vue.js 为 v-on 提供了事件修饰符来处理 DOM 事件细节
+&lt;!&ndash; 阻止单击事件冒泡 &ndash;&gt;
+<a v-on:click.stop="doThis"></a>
+&lt;!&ndash; 提交事件不再重载页面 &ndash;&gt;
+<form v-on:submit.prevent="onSubmit"></form>
+&lt;!&ndash; 修饰符可以串联  &ndash;&gt;
+<a v-on:click.stop.prevent="doThat"></a>
+&lt;!&ndash; 只有修饰符 &ndash;&gt;
+<form v-on:submit.prevent></form>
+&lt;!&ndash; 添加事件侦听器时使用事件捕获模式 &ndash;&gt;
+<div v-on:click.capture="doThis">...</div>
+&lt;!&ndash; 只当事件在该元素本身（而不是子元素）触发时触发回调 &ndash;&gt;
+<div v-on:click.self="doThat">...</div>
+
+&lt;!&ndash; click 事件只能点击一次，2.1.4版本新增 &ndash;&gt;
+<a v-on:click.once="doThis"></a>
+
+Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：
+&lt;!&ndash; 只有在 keyCode 是 13 时调用 vm.submit() &ndash;&gt;
+<input v-on:keyup.13="submit">
+Vue 为最常用的按键提供了别名
+&lt;!&ndash; 同上 &ndash;&gt;
+<input v-on:keyup.enter="submit">
+&lt;!&ndash; 缩写语法 &ndash;&gt;
+<input @keyup.enter="submit">-->
+</body>
+</html>
